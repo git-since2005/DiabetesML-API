@@ -11,10 +11,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - docker build -t diabetes-api .
-      - docker tag diabetes-api:latest $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/diabetes-api:latest
+      - docker build -t diabetes-ml-api .
+      - docker tag diabetes-ml-api:latest $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/diabetes-ml-api:latest
 
   post_build:
     commands:
       - echo Pushing image to ECR
-      - docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/diabetes-api:latest
+      - docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/diabetes-ml-api:latest
